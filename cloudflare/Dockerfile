@@ -7,7 +7,7 @@ RUN set -ex \
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-FROM python:3.10-slim
-COPY --from=build /usr/local/lib/python*/site-packages /usr/local/lib/python3.10/site-packages
-COPY --from=build /usr/local/bin/octodns-* /usr/local/bin/
+# FROM python:3.10-slim
+# COPY --from=build /usr/local/lib/python*/site-packages /usr/local/lib/python3.10/site-packages
+# COPY --from=build /usr/local/bin/octodns-* /usr/local/bin/
 CMD [ "/bin/sh" ]
