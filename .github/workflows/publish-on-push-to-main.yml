@@ -6,8 +6,8 @@
     - github-actions
 name: Publish to Docker Hub on push to main
 jobs:
-  Publish_to_Docker_Hub:
-    name: Publish octodns to Docker Hub
+  Publish_all:
+    name: Publish all flavor
     runs-on: ubuntu-latest
     permissions:
       actions: none
@@ -15,7 +15,7 @@ jobs:
       contents: none
       deployments: none
       issues: none
-      packages: none
+      packages: write
       pull-requests: none
       repository-projects: none
       security-events: none
@@ -38,8 +38,24 @@ jobs:
         args: logout
       env:
         DOCKER_REGISTRY_URL: docker.io
-  Publish_to_GHCR:
-    name: Publish octodns to GitHub Container Registry
+    - name: Docker Login
+      uses: parkr/actions/docker-auth@main
+      with:
+        args: login
+      env:
+        DOCKER_USERNAME: "${{ secrets.GHCR_USERNAME }}"
+        DOCKER_PASSWORD: "${{ secrets.GHCR_PASSWORD }}"
+        DOCKER_REGISTRY_URL: ghcr.io
+    - name: Publish octodns
+      run: script/release all ghcr.io/octodns/octodns
+    - name: Docker Logout
+      uses: parkr/actions/docker-auth@main
+      with:
+        args: logout
+      env:
+        DOCKER_REGISTRY_URL: ghcr.io
+  Publish_cloudflare:
+    name: Publish cloudflare flavor
     runs-on: ubuntu-latest
     permissions:
       actions: none
@@ -59,11 +75,27 @@ jobs:
       with:
         args: login
       env:
+        DOCKER_USERNAME: "${{ secrets.DOCKER_USERNAME }}"
+        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
+        DOCKER_REGISTRY_URL: docker.io
+    - name: Publish octodns
+      run: script/release cloudflare octodns/octodns-cloudflare
+    - name: Docker Logout
+      uses: parkr/actions/docker-auth@main
+      with:
+        args: logout
+      env:
+        DOCKER_REGISTRY_URL: docker.io
+    - name: Docker Login
+      uses: parkr/actions/docker-auth@main
+      with:
+        args: login
+      env:
         DOCKER_USERNAME: "${{ secrets.GHCR_USERNAME }}"
         DOCKER_PASSWORD: "${{ secrets.GHCR_PASSWORD }}"
         DOCKER_REGISTRY_URL: ghcr.io
     - name: Publish octodns
-      run: script/release ghcr.io/octodns/octodns
+      run: script/release cloudflare ghcr.io/octodns/octodns-cloudflare
     - name: Docker Logout
       uses: parkr/actions/docker-auth@main
       with:

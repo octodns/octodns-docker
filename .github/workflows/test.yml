@@ -18,7 +18,7 @@ jobs:
       statuses: none
     steps:
     - uses: actions/checkout@v2
-    - run: script/cibuild all
+    - run: script/cibuild all octodns
   Test_cloudflare:
     name: cloudflare
     runs-on: ubuntu-latest
@@ -35,4 +35,4 @@ jobs:
       statuses: none
     steps:
     - uses: actions/checkout@v2
-    - run: script/cibuild cloudflare
+    - run: script/cibuild cloudflare octodns-cloudflare
