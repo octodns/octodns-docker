@@ -2,7 +2,6 @@
 octodns-azure==0.0.1
 octodns-cloudflare==0.0.1
 octodns-constellix==0.0.1
-octodns-ddns==0.0.1
 octodns-digitalocean==0.0.1
 octodns-dnsimple==0.0.1
 octodns-dnsmadeeasy==0.0.1
