@@ -1,0 +1,72 @@
+---
+'on':
+  push:
+    branches:
+    - main
+    - github-actions
+name: Publish to Docker Hub on push to main
+jobs:
+  Publish_to_Docker_Hub:
+    name: Publish octodns to Docker Hub
+    runs-on: ubuntu-latest
+    permissions:
+      actions: none
+      checks: none
+      contents: none
+      deployments: none
+      issues: none
+      packages: none
+      pull-requests: none
+      repository-projects: none
+      security-events: none
+      statuses: none
+    steps:
+    - uses: actions/checkout@v2
+    - name: Docker Login
+      uses: parkr/actions/docker-auth@main
+      with:
+        args: login
+      env:
+        DOCKER_USERNAME: "${{ secrets.DOCKER_USERNAME }}"
+        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
+        DOCKER_REGISTRY_URL: docker.io
+    - name: Publish octodns
+      run: script/release all octodns/octodns
+    - name: Docker Logout
+      uses: parkr/actions/docker-auth@main
+      with:
+        args: logout
+      env:
+        DOCKER_REGISTRY_URL: docker.io
+  Publish_to_GHCR:
+    name: Publish octodns to GitHub Container Registry
+    runs-on: ubuntu-latest
+    permissions:
+      actions: none
+      checks: none
+      contents: none
+      deployments: none
+      issues: none
+      packages: write
+      pull-requests: none
+      repository-projects: none
+      security-events: none
+      statuses: none
+    steps:
+    - uses: actions/checkout@v2
+    - name: Docker Login
+      uses: parkr/actions/docker-auth@main
+      with:
+        args: login
+      env:
+        DOCKER_USERNAME: "${{ secrets.GHCR_USERNAME }}"
+        DOCKER_PASSWORD: "${{ secrets.GHCR_PASSWORD }}"
+        DOCKER_REGISTRY_URL: ghcr.io
+    - name: Publish octodns
+      run: script/release ghcr.io/octodns/octodns
+    - name: Docker Logout
+      uses: parkr/actions/docker-auth@main
+      with:
+        args: logout
+      env:
+        DOCKER_REGISTRY_URL: ghcr.io

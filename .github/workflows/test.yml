@@ -1,0 +1,38 @@
+---
+'on': push
+name: Test
+jobs:
+  Test_all:
+    name: all
+    runs-on: ubuntu-latest
+    permissions:
+      actions: none
+      checks: none
+      contents: none
+      deployments: none
+      issues: none
+      packages: none
+      pull-requests: none
+      repository-projects: none
+      security-events: none
+      statuses: none
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild all
+  Test_cloudflare:
+    name: cloudflare
+    runs-on: ubuntu-latest
+    permissions:
+      actions: none
+      checks: none
+      contents: none
+      deployments: none
+      issues: none
+      packages: none
+      pull-requests: none
+      repository-projects: none
+      security-events: none
+      statuses: none
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild cloudflare
