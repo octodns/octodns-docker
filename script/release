@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ -L "$0" ]; then
-    root=$(cd "$(dirname "$(readlink "$0")")" && pwd)
+    script_dir=$(cd "$(dirname "$(readlink "$0")")" && pwd)
 else
-    root=$(cd "$(dirname "$0")" && pwd)
+    script_dir=$(cd "$(dirname "$0")" && pwd)
 fi
 
 FLAVOR="$1"
@@ -20,6 +20,6 @@ test -z "$TAG" && {
 
 set -ex
 
-"${root}/script/build" "$FLAVOR" "$TAG"
-"${root}/script/test" "$TAG"
+"${script_dir}/build" "$FLAVOR" "$TAG"
+"${script_dir}/test" "$TAG"
 docker push "$TAG"
