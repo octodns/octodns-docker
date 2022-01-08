@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ -L "$0" ]; then
-    root=$(cd "$(dirname "$(readlink "$0")")" && pwd)
+    script_dir=$(cd "$(dirname "$(readlink "$0")")" && pwd)
 else
-    root=$(cd "$(dirname "$0")" && pwd)
+    script_dir=$(cd "$(dirname "$0")" && pwd)
 fi
 
 FLAVOR="$1"
@@ -20,4 +20,11 @@ test -z "$TAG" && {
 
 set -ex
 
-docker build -t "$TAG" "$FLAVOR"
+docker build --tag "$TAG" \
+    --label org.opencontainers.image.created="$(date --rfc-3339=seconds)" \
+    --label org.opencontainers.image.url="https://github.com/${GITHUB_REPOSITORY}" \
+    --label org.opencontainers.image.documentation="https://github.com/octodns/octodns#readme" \
+    --label org.opencontainers.image.source="https://github.com/${GITHUB_REPOSITORY}" \
+    --label org.opencontainers.image.revision="$GITHUB_SHA" \
+    --label org.opencontainers.image.licenses=MIT \
+    "$FLAVOR"

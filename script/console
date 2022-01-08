@@ -20,5 +20,5 @@ test -z "$TAG" && {
 
 set -ex
 
-"${script_dir}/build" "$FLAVOR" "$TAG"
-"${script_dir}/test" "$TAG"
+"${script_dir}/cibuild" "$FLAVOR" "$TAG"
+docker run --rm -it "$TAG"

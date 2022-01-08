@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ -L "$0" ]; then
-    root=$(cd "$(dirname "$(readlink "$0")")" && pwd)
+    script_dir=$(cd "$(dirname "$(readlink "$0")")" && pwd)
 else
-    root=$(cd "$(dirname "$0")" && pwd)
+    script_dir=$(cd "$(dirname "$0")" && pwd)
 fi
 
 FLAVOR="$1"
@@ -17,9 +17,9 @@ test -z "$TAG" && {
     echo "usage: $0 <FLAVOR> <FULL_TAG>"
     exit 1
 }
+TAG="${TAG}:$(cat "$script_dir"/../VERSION)"
 
 set -ex
 
-"${root}/script/build" "$FLAVOR" "$TAG"
-"${root}/script/test" "$TAG"
+"${script_dir}/cibuild" "$FLAVOR" "$TAG"
 docker push "$TAG"
