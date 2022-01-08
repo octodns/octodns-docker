@@ -14,6 +14,6 @@ OctoDNS with **only** the [CloudflareProvider](https://github.com/octodns/octodn
 
 ## Adding a new flavor
 
-1. Create a new subdirectory, with a Dockerfile and requirements.txt.
+1. Create a new subdirectory, with a requirements.txt.
 2. Specify the dependencies you want in requirements.txt
 3. Add GitHub Actions jobs to both workflows for the new flavor

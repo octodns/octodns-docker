@@ -20,6 +20,10 @@ test -z "$TAG" && {
 
 set -ex
 
+if ! [ -f "${script_dir}/../${FLAVOR}/Dockerfile" ]; then
+    cp "${script_dir}/../all/Dockerfile" "${script_dir}/../${FLAVOR}/Dockerfile"
+fi
+
 docker build --tag "$TAG" \
     --label org.opencontainers.image.created="$(date --rfc-3339=seconds)" \
     --label org.opencontainers.image.url="https://github.com/${GITHUB_REPOSITORY}" \
