@@ -23,9 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Docker Login
-      uses: parkr/actions/docker-auth@main
-      with:
-        args: login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
       env:
         DOCKER_USERNAME: octodns
         DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
@@ -33,9 +31,7 @@ jobs:
     - name: Publish octodns
       run: script/release all octodns/octodns
     - name: Docker Logout
-      uses: parkr/actions/docker-auth@main
-      with:
-        args: logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
       env:
         DOCKER_REGISTRY_URL: docker.io
   Publish_cloudflare:
@@ -55,9 +51,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Docker Login
-      uses: parkr/actions/docker-auth@main
-      with:
-        args: login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
       env:
         DOCKER_USERNAME: octodns
         DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
@@ -65,8 +59,6 @@ jobs:
     - name: Publish octodns
       run: script/release cloudflare octodns/cloudflare
     - name: Docker Logout
-      uses: parkr/actions/docker-auth@main
-      with:
-        args: logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
       env:
         DOCKER_REGISTRY_URL: docker.io
