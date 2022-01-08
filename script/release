@@ -17,7 +17,7 @@ test -z "$TAG" && {
     echo "usage: $0 <FLAVOR> <FULL_TAG>"
     exit 1
 }
-TAG="${TAG}:$(cat script_dir/../VERSION)"
+TAG="${TAG}:$(cat "$script_dir"/../VERSION)"
 
 set -ex
 
