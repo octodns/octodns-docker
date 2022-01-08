@@ -27,7 +27,7 @@ jobs:
       with:
         args: login
       env:
-        DOCKER_USERNAME: "${{ secrets.DOCKER_USERNAME }}"
+        DOCKER_USERNAME: octodns
         DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
         DOCKER_REGISTRY_URL: docker.io
     - name: Publish octodns
@@ -38,22 +38,6 @@ jobs:
         args: logout
       env:
         DOCKER_REGISTRY_URL: docker.io
-    - name: Docker Login
-      uses: parkr/actions/docker-auth@main
-      with:
-        args: login
-      env:
-        DOCKER_USERNAME: "${{ secrets.GHCR_USERNAME }}"
-        DOCKER_PASSWORD: "${{ secrets.GHCR_PASSWORD }}"
-        DOCKER_REGISTRY_URL: ghcr.io
-    - name: Publish octodns
-      run: script/release all ghcr.io/octodns/octodns
-    - name: Docker Logout
-      uses: parkr/actions/docker-auth@main
-      with:
-        args: logout
-      env:
-        DOCKER_REGISTRY_URL: ghcr.io
   Publish_cloudflare:
     name: Publish cloudflare flavor
     runs-on: ubuntu-latest
@@ -75,30 +59,14 @@ jobs:
       with:
         args: login
       env:
-        DOCKER_USERNAME: "${{ secrets.DOCKER_USERNAME }}"
+        DOCKER_USERNAME: octodns
         DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
         DOCKER_REGISTRY_URL: docker.io
     - name: Publish octodns
-      run: script/release cloudflare octodns/octodns-cloudflare
+      run: script/release cloudflare octodns/cloudflare
     - name: Docker Logout
       uses: parkr/actions/docker-auth@main
       with:
         args: logout
       env:
         DOCKER_REGISTRY_URL: docker.io
-    - name: Docker Login
-      uses: parkr/actions/docker-auth@main
-      with:
-        args: login
-      env:
-        DOCKER_USERNAME: "${{ secrets.GHCR_USERNAME }}"
-        DOCKER_PASSWORD: "${{ secrets.GHCR_PASSWORD }}"
-        DOCKER_REGISTRY_URL: ghcr.io
-    - name: Publish octodns
-      run: script/release cloudflare ghcr.io/octodns/octodns-cloudflare
-    - name: Docker Logout
-      uses: parkr/actions/docker-auth@main
-      with:
-        args: logout
-      env:
-        DOCKER_REGISTRY_URL: ghcr.io

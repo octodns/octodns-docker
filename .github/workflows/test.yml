@@ -35,4 +35,4 @@ jobs:
       statuses: none
     steps:
     - uses: actions/checkout@v2
-    - run: script/cibuild cloudflare octodns-cloudflare
+    - run: script/cibuild cloudflare cloudflare
