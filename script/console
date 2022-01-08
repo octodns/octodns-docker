@@ -17,9 +17,8 @@ test -z "$TAG" && {
     echo "usage: $0 <FLAVOR> <FULL_TAG>"
     exit 1
 }
-TAG="${TAG}:$(cat script_dir/../VERSION)"
 
 set -ex
 
 "${script_dir}/cibuild" "$FLAVOR" "$TAG"
-docker push "$TAG"
+docker run --rm -it "$TAG"

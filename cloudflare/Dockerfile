@@ -4,10 +4,12 @@ RUN set -ex \
   && apt-get -y install --no-install-recommends git \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+WORKDIR /opt/octodns
 COPY requirements.txt requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN set -ex \
+  && python -m venv env \
+  && . env/bin/activate \
+  && pip install --no-cache-dir -r requirements.txt
 
-# FROM python:3.10-slim
-# COPY --from=build /usr/local/lib/python*/site-packages /usr/local/lib/python3.10/site-packages
-# COPY --from=build /usr/local/bin/octodns-* /usr/local/bin/
+ENV PATH=/opt/octodns/env/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 CMD [ "/bin/sh" ]
