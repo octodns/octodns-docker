@@ -1,2 +1,0 @@
--e git+https://github.com/octodns/octodns@355995daddb37e1286d88f5a92bb5be4736fa120#egg=octodns
-octodns-cloudflare==0.0.1
