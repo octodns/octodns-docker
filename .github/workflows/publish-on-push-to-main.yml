@@ -286,7 +286,7 @@ jobs:
       run: docker logout "$DOCKER_REGISTRY_URL"
       env:
         DOCKER_REGISTRY_URL: docker.io
-  Publish_powerdns:
+  Publish_route53:
     name: Publish route53 flavor
     runs-on: ubuntu-latest
     permissions:
