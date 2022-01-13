@@ -5,6 +5,9 @@
 ## Usage
 
 ```
+$ docker run -v "$(pwd):/octodns" --workdir /octodns octodns/<flavor> octodns-sync
+
+# Example:
 $ docker run -v "$(pwd):/octodns" --workdir /octodns octodns/octodns octodns-sync
 ```
 
