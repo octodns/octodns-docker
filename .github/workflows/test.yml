@@ -59,6 +59,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild gandi gandi
+  Test_gcore:
+    name: gcore
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild gcore gcore
   Test_ns1:
     name: ns1
     runs-on: ubuntu-latest

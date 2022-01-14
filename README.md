@@ -81,6 +81,12 @@ OctoDNS with **only** the [GandiProvider](https://github.com/octodns/octodns-gan
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/gandi)
 
+### 12. 'gcore'
+
+OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-gcore).
+
+[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/gcore)
+
 ### 12. 'ns1'
 
 OctoDNS with **only** the [Ns1Provider](https://github.com/octodns/octodns-ns1).
