@@ -12,7 +12,7 @@ jobs:
       run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         "$DOCKER_REGISTRY_URL"'
     - name: Publish octodns
-      run: script/release route53 octodns/route53
+      run: script/release azure octodns/azure
     - env:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
@@ -30,7 +30,7 @@ jobs:
       run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         "$DOCKER_REGISTRY_URL"'
     - name: Publish octodns
-      run: script/release route53 octodns/route53
+      run: script/release cloudflare octodns/cloudflare
     - env:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
@@ -48,7 +48,7 @@ jobs:
       run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         "$DOCKER_REGISTRY_URL"'
     - name: Publish octodns
-      run: script/release route53 octodns/route53
+      run: script/release constellix octodns/constellix
     - env:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
@@ -66,7 +66,7 @@ jobs:
       run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         "$DOCKER_REGISTRY_URL"'
     - name: Publish octodns
-      run: script/release route53 octodns/route53
+      run: script/release digitalocean octodns/digitalocean
     - env:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
@@ -84,7 +84,7 @@ jobs:
       run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         "$DOCKER_REGISTRY_URL"'
     - name: Publish octodns
-      run: script/release route53 octodns/route53
+      run: script/release dnsimple octodns/dnsimple
     - env:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
@@ -102,7 +102,7 @@ jobs:
       run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         "$DOCKER_REGISTRY_URL"'
     - name: Publish octodns
-      run: script/release route53 octodns/route53
+      run: script/release dnsmadeeasy octodns/dnsmadeeasy
     - env:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
@@ -120,7 +120,7 @@ jobs:
       run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         "$DOCKER_REGISTRY_URL"'
     - name: Publish octodns
-      run: script/release route53 octodns/route53
+      run: script/release dyn octodns/dyn
     - env:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
@@ -138,7 +138,7 @@ jobs:
       run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         "$DOCKER_REGISTRY_URL"'
     - name: Publish octodns
-      run: script/release route53 octodns/route53
+      run: script/release edgedns octodns/edgedns
     - env:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
@@ -156,7 +156,7 @@ jobs:
       run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         "$DOCKER_REGISTRY_URL"'
     - name: Publish octodns
-      run: script/release route53 octodns/route53
+      run: script/release ns1 octodns/ns1
     - env:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
@@ -174,7 +174,7 @@ jobs:
       run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         "$DOCKER_REGISTRY_URL"'
     - name: Publish octodns
-      run: script/release route53 octodns/route53
+      run: script/release powerdns octodns/powerdns
     - env:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
