@@ -95,6 +95,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild ns1 ns1
+  Test_ovh:
+    name: ovh
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild ovh ovh
   Test_powerdns:
     name: powerdns
     runs-on: ubuntu-latest

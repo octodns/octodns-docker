@@ -15,5 +15,6 @@ octodns-googlecloud==0.0.1
 octodns-hetzner==0.0.1
 octodns-mythicbeasts==0.0.1
 octodns-ns1==0.0.1
+octodns-ovh==0.0.1
 octodns-powerdns==0.0.1
 octodns-route53==0.0.2
