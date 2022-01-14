@@ -24,6 +24,7 @@ This runs `octodns-sync` on the contents of the current working directory.
 | dnsimple | [octodns_dnsimple](https://github.com/octodns/octodns-dnsimple) | [octodns/dnsimple](https://hub.docker.com/r/octodns/dnsimple) |
 | dnsmadeeasy | [octodns_dnsmadeeasy](https://github.com/octodns/octodns-dnsmadeeasy) | [octodns/dnsmadeeasy](https://hub.docker.com/r/octodns/dnsmadeeasy) |
 | dyn | [octodns_dyn](https://github.com/octodns/octodns-dyn) | [octodns/dyn](https://hub.docker.com/r/octodns/dyn) |
+| easydns | [octodns_easydns](https://github.com/octodns/octodns-easydns) | [octodns/easydns](https://hub.docker.com/r/octodns/easydns) |
 | edgedns | [octodns_edgedns](https://github.com/octodns/octodns-edgedns) | [octodns/edgedns](https://hub.docker.com/r/octodns/edgedns) |
 | etchosts | [octodns_etchosts](https://github.com/octodns/octodns-etchosts) | [octodns/etchosts](https://hub.docker.com/r/octodns/etchosts) |
 | gandi | [octodns_gandi](https://github.com/octodns/octodns-gandi) | [octodns/gandi](https://hub.docker.com/r/octodns/gandi) |
