@@ -63,31 +63,37 @@ OctoDNS with **only** the [DynProvider](https://github.com/octodns/octodns-dyn).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/dyn)
 
-### 8. 'edgedns'
+### 9. 'edgedns'
 
 OctoDNS with **only** the [AkamaiProvider](https://github.com/octodns/octodns-edgedns).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/edgedns)
 
-### 8. 'etchosts'
+### 10. 'etchosts'
 
 OctoDNS with **only** the [EtcHostsProvider](https://github.com/octodns/octodns-etchosts).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/etchosts)
 
-### 9. 'ns1'
+### 11. 'gandi'
+
+OctoDNS with **only** the [GandiProvider](https://github.com/octodns/octodns-gandi).
+
+[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/gandi)
+
+### 12. 'ns1'
 
 OctoDNS with **only** the [Ns1Provider](https://github.com/octodns/octodns-ns1).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/ns1)
 
-### 10. 'powerdns'
+### 13. 'powerdns'
 
 OctoDNS with **only** the [PowerDNSProvider](https://github.com/octodns/octodns-powerdns).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/powerdns)
 
-### 11. 'route53'
+### 14. 'route53'
 
 OctoDNS with **only** the [Route53Provider](https://github.com/octodns/octodns-route53).
 
