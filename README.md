@@ -89,19 +89,19 @@ OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-gco
 
 ### 13. 'googlecloud'
 
-OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-googlecloud).
+OctoDNS with **only** the [GoogleCloudProvider](https://github.com/octodns/octodns-googlecloud).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/googlecloud)
 
 ### 14. 'hetzner'
 
-OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-hetzner).
+OctoDNS with **only** the [HetznerProvider](https://github.com/octodns/octodns-hetzner).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/hetzner)
 
 ### 15. 'mythicbeasts'
 
-OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-mythicbeasts).
+OctoDNS with **only** the [MythicBeastsProvider](https://github.com/octodns/octodns-mythicbeasts).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/mythicbeasts)
 
