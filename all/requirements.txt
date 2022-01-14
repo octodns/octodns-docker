@@ -6,6 +6,7 @@ octodns-digitalocean==0.0.1
 octodns-dnsimple==0.0.1
 octodns-dnsmadeeasy==0.0.1
 octodns-dyn==0.0.1
+octodns-easydns==0.0.1
 octodns-edgedns==0.0.1
 octodns-etchosts==0.0.1
 octodns-gandi==0.0.1
