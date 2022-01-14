@@ -38,9 +38,9 @@ This runs `octodns-sync` on the contents of the current working directory.
 
 ## Adding a new flavor
 
-1. Create a new subdirectory, with a `requirements.txt` file.
-2. Specify the dependencies you want in `requirements.txt`
-3. Add GitHub Actions jobs to both workflows for the new flavor
+1. Add the module to the `all/requirements.txt` file
+2. Run `script/generate-workflow-file` (requires PyYaml module)
+3. Copy-and-paste the markdown table from the output into `README.md`
 
 ## Updating a version
 
