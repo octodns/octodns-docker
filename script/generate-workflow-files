@@ -1,0 +1,63 @@
+#!/usr/local/bin/python3
+
+import yaml
+
+def image_name(flavor):
+    if flavor == 'all':
+        return 'octodns'
+    else:
+        return flavor
+
+def write_test_workflow(flavors):
+    jobs = {}
+    for flavor in flavors:
+        jobs[f'Test_{flavor}'] = {
+            'name': flavor,
+            'runs-on': 'ubuntu-latest',
+            'steps': [
+                {'uses': 'actions/checkout@v2'},
+                {'run': f'script/cibuild {flavor} {image_name(flavor)}'}
+            ]
+        }
+    with open(".github/workflows/test.yml", 'w', encoding='UTF-8') as f:
+        yaml.dump({
+            'on': 'push',
+            'name': 'Test',
+            'jobs': jobs,
+        }, f)
+
+def write_publish_workflow(flavors):
+    jobs = {}
+    for flavor in flavors:
+        jobs[f'Publish_{flavor}'] = {
+            'name': flavor,
+            'runs-on': 'ubuntu-latest',
+            'steps': [
+                {'uses': 'actions/checkout@v2'},
+                {
+                    'name': 'Docker Login',
+                    'run': 'bash -c \'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"\'',
+                    'env': {'DOCKER_USERNAME': 'octodns', 'DOCKER_PASSWORD': '${{ secrets.DOCKER_PASSWORD }}', 'DOCKER_REGISTRY_URL': 'docker.io'}
+                },
+                {'name': 'Publish octodns', 'run': 'script/release route53 octodns/route53'},
+                {'name': 'Docker Logout', 'run': 'docker logout "$DOCKER_REGISTRY_URL"', 'env': {'DOCKER_REGISTRY_URL': 'docker.io'}}
+            ]
+        }
+    with open(".github/workflows/publish-on-push-to-main.yml", 'w', encoding='UTF-8') as f:
+        yaml.dump({
+            'on': {'push': { 'branches': ['main', 'github-actions'] }},
+            'name': 'Publish to Docker Hub on push to main',
+            'jobs': jobs,
+        }, f)
+
+def main():
+    with open('all/requirements.txt', 'r', encoding='UTF-8') as file:
+        flavors = [line.rstrip() for line in file.readlines()]
+        flavors.pop(0)
+        flavors = [flavor.split('==')[0].split('-')[1] for flavor in flavors]
+    print(flavors)
+    write_test_workflow(flavors)
+    write_publish_workflow(flavors)
+
+if __name__ == "__main__":
+    main()

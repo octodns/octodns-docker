@@ -1,316 +1,187 @@
----
+jobs:
+  Publish_azure:
+    name: azure
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release route53 octodns/route53
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
+  Publish_cloudflare:
+    name: cloudflare
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release route53 octodns/route53
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
+  Publish_constellix:
+    name: constellix
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release route53 octodns/route53
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
+  Publish_digitalocean:
+    name: digitalocean
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release route53 octodns/route53
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
+  Publish_dnsimple:
+    name: dnsimple
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release route53 octodns/route53
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
+  Publish_dnsmadeeasy:
+    name: dnsmadeeasy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release route53 octodns/route53
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
+  Publish_dyn:
+    name: dyn
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release route53 octodns/route53
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
+  Publish_ns1:
+    name: ns1
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release route53 octodns/route53
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
+  Publish_powerdns:
+    name: powerdns
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release route53 octodns/route53
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
+  Publish_route53:
+    name: route53
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release route53 octodns/route53
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
+name: Publish to Docker Hub on push to main
 'on':
   push:
     branches:
     - main
     - github-actions
-name: Publish to Docker Hub on push to main
-jobs:
-  Publish_all:
-    name: Publish all flavor
-    runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      checks: none
-      contents: none
-      deployments: none
-      issues: none
-      packages: write
-      pull-requests: none
-      repository-projects: none
-      security-events: none
-      statuses: none
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker Login
-      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
-      env:
-        DOCKER_USERNAME: octodns
-        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
-        DOCKER_REGISTRY_URL: docker.io
-    - name: Publish octodns
-      run: script/release all octodns/octodns
-    - name: Docker Logout
-      run: docker logout "$DOCKER_REGISTRY_URL"
-      env:
-        DOCKER_REGISTRY_URL: docker.io
-  Publish_azure:
-    name: Publish azure flavor
-    runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      checks: none
-      contents: none
-      deployments: none
-      issues: none
-      packages: write
-      pull-requests: none
-      repository-projects: none
-      security-events: none
-      statuses: none
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker Login
-      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
-      env:
-        DOCKER_USERNAME: octodns
-        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
-        DOCKER_REGISTRY_URL: docker.io
-    - name: Publish octodns
-      run: script/release azure octodns/azure
-    - name: Docker Logout
-      run: docker logout "$DOCKER_REGISTRY_URL"
-      env:
-        DOCKER_REGISTRY_URL: docker.io
-  Publish_cloudflare:
-    name: Publish cloudflare flavor
-    runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      checks: none
-      contents: none
-      deployments: none
-      issues: none
-      packages: write
-      pull-requests: none
-      repository-projects: none
-      security-events: none
-      statuses: none
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker Login
-      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
-      env:
-        DOCKER_USERNAME: octodns
-        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
-        DOCKER_REGISTRY_URL: docker.io
-    - name: Publish octodns
-      run: script/release cloudflare octodns/cloudflare
-    - name: Docker Logout
-      run: docker logout "$DOCKER_REGISTRY_URL"
-      env:
-        DOCKER_REGISTRY_URL: docker.io
-  Publish_constellix:
-    name: Publish constellix flavor
-    runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      checks: none
-      contents: none
-      deployments: none
-      issues: none
-      packages: write
-      pull-requests: none
-      repository-projects: none
-      security-events: none
-      statuses: none
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker Login
-      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
-      env:
-        DOCKER_USERNAME: octodns
-        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
-        DOCKER_REGISTRY_URL: docker.io
-    - name: Publish octodns
-      run: script/release constellix octodns/constellix
-    - name: Docker Logout
-      run: docker logout "$DOCKER_REGISTRY_URL"
-      env:
-        DOCKER_REGISTRY_URL: docker.io
-  Publish_digitalocean:
-    name: Publish digitalocean flavor
-    runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      checks: none
-      contents: none
-      deployments: none
-      issues: none
-      packages: write
-      pull-requests: none
-      repository-projects: none
-      security-events: none
-      statuses: none
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker Login
-      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
-      env:
-        DOCKER_USERNAME: octodns
-        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
-        DOCKER_REGISTRY_URL: docker.io
-    - name: Publish octodns
-      run: script/release digitalocean octodns/digitalocean
-    - name: Docker Logout
-      run: docker logout "$DOCKER_REGISTRY_URL"
-      env:
-        DOCKER_REGISTRY_URL: docker.io
-  Publish_dnsimple:
-    name: Publish dnsimple flavor
-    runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      checks: none
-      contents: none
-      deployments: none
-      issues: none
-      packages: write
-      pull-requests: none
-      repository-projects: none
-      security-events: none
-      statuses: none
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker Login
-      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
-      env:
-        DOCKER_USERNAME: octodns
-        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
-        DOCKER_REGISTRY_URL: docker.io
-    - name: Publish octodns
-      run: script/release dnsimple octodns/dnsimple
-    - name: Docker Logout
-      run: docker logout "$DOCKER_REGISTRY_URL"
-      env:
-        DOCKER_REGISTRY_URL: docker.io
-  Publish_dnsmadeeasy:
-    name: Publish dnsmadeeasy flavor
-    runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      checks: none
-      contents: none
-      deployments: none
-      issues: none
-      packages: write
-      pull-requests: none
-      repository-projects: none
-      security-events: none
-      statuses: none
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker Login
-      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
-      env:
-        DOCKER_USERNAME: octodns
-        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
-        DOCKER_REGISTRY_URL: docker.io
-    - name: Publish octodns
-      run: script/release dnsmadeeasy octodns/dnsmadeeasy
-    - name: Docker Logout
-      run: docker logout "$DOCKER_REGISTRY_URL"
-      env:
-        DOCKER_REGISTRY_URL: docker.io
-  Publish_dyn:
-    name: Publish dyn flavor
-    runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      checks: none
-      contents: none
-      deployments: none
-      issues: none
-      packages: write
-      pull-requests: none
-      repository-projects: none
-      security-events: none
-      statuses: none
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker Login
-      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
-      env:
-        DOCKER_USERNAME: octodns
-        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
-        DOCKER_REGISTRY_URL: docker.io
-    - name: Publish octodns
-      run: script/release dyn octodns/dyn
-    - name: Docker Logout
-      run: docker logout "$DOCKER_REGISTRY_URL"
-      env:
-        DOCKER_REGISTRY_URL: docker.io
-  Publish_ns1:
-    name: Publish ns1 flavor
-    runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      checks: none
-      contents: none
-      deployments: none
-      issues: none
-      packages: write
-      pull-requests: none
-      repository-projects: none
-      security-events: none
-      statuses: none
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker Login
-      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
-      env:
-        DOCKER_USERNAME: octodns
-        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
-        DOCKER_REGISTRY_URL: docker.io
-    - name: Publish octodns
-      run: script/release ns1 octodns/ns1
-    - name: Docker Logout
-      run: docker logout "$DOCKER_REGISTRY_URL"
-      env:
-        DOCKER_REGISTRY_URL: docker.io
-  Publish_powerdns:
-    name: Publish powerdns flavor
-    runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      checks: none
-      contents: none
-      deployments: none
-      issues: none
-      packages: write
-      pull-requests: none
-      repository-projects: none
-      security-events: none
-      statuses: none
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker Login
-      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
-      env:
-        DOCKER_USERNAME: octodns
-        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
-        DOCKER_REGISTRY_URL: docker.io
-    - name: Publish octodns
-      run: script/release powerdns octodns/powerdns
-    - name: Docker Logout
-      run: docker logout "$DOCKER_REGISTRY_URL"
-      env:
-        DOCKER_REGISTRY_URL: docker.io
-  Publish_route53:
-    name: Publish route53 flavor
-    runs-on: ubuntu-latest
-    permissions:
-      actions: none
-      checks: none
-      contents: none
-      deployments: none
-      issues: none
-      packages: write
-      pull-requests: none
-      repository-projects: none
-      security-events: none
-      statuses: none
-    steps:
-    - uses: actions/checkout@v2
-    - name: Docker Login
-      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"'
-      env:
-        DOCKER_USERNAME: octodns
-        DOCKER_PASSWORD: "${{ secrets.DOCKER_PASSWORD }}"
-        DOCKER_REGISTRY_URL: docker.io
-    - name: Publish octodns
-      run: script/release route53 octodns/route53
-    - name: Docker Logout
-      run: docker logout "$DOCKER_REGISTRY_URL"
-      env:
-        DOCKER_REGISTRY_URL: docker.io
