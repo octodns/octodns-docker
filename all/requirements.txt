@@ -8,4 +8,4 @@ octodns-dnsmadeeasy==0.0.1
 octodns-dyn==0.0.1
 octodns-ns1==0.0.1
 octodns-powerdns==0.0.1
-octodns-route53==0.0.1
+octodns-route53==0.0.2
