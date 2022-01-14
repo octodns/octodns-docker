@@ -87,31 +87,37 @@ OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-gco
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/gcore)
 
-### 12. 'googlecloud'
+### 13. 'googlecloud'
 
 OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-googlecloud).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/googlecloud)
 
-### 12. 'hetzner'
+### 14. 'hetzner'
 
 OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-hetzner).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/hetzner)
 
-### 12. 'ns1'
+### 15. 'mythicbeasts'
+
+OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-mythicbeasts).
+
+[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/mythicbeasts)
+
+### 16. 'ns1'
 
 OctoDNS with **only** the [Ns1Provider](https://github.com/octodns/octodns-ns1).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/ns1)
 
-### 13. 'powerdns'
+### 17. 'powerdns'
 
 OctoDNS with **only** the [PowerDNSProvider](https://github.com/octodns/octodns-powerdns).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/powerdns)
 
-### 14. 'route53'
+### 18. 'route53'
 
 OctoDNS with **only** the [Route53Provider](https://github.com/octodns/octodns-route53).
 

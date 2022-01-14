@@ -233,6 +233,24 @@ jobs:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
       run: docker logout "$DOCKER_REGISTRY_URL"
+  Publish_mythicbeasts:
+    name: mythicbeasts
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release mythicbeasts octodns/mythicbeasts
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
   Publish_ns1:
     name: ns1
     runs-on: ubuntu-latest
