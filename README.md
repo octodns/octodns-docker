@@ -63,6 +63,12 @@ OctoDNS with **only** the [DynProvider](https://github.com/octodns/octodns-dyn).
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/dyn)
 
+### 8. 'edgedns'
+
+OctoDNS with **only** the [AkamaiProvider](https://github.com/octodns/octodns-edgedns).
+
+[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/edgedns)
+
 ### 9. 'ns1'
 
 OctoDNS with **only** the [Ns1Provider](https://github.com/octodns/octodns-ns1).
