@@ -65,6 +65,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild gcore gcore
+  Test_googlecloud:
+    name: googlecloud
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild googlecloud googlecloud
   Test_ns1:
     name: ns1
     runs-on: ubuntu-latest

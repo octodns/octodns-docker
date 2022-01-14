@@ -87,6 +87,12 @@ OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-gco
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/gcore)
 
+### 12. 'googlecloud'
+
+OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-googlecloud).
+
+[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/googlecloud)
+
 ### 12. 'ns1'
 
 OctoDNS with **only** the [Ns1Provider](https://github.com/octodns/octodns-ns1).
