@@ -50,6 +50,12 @@ def write_publish_workflow(flavors):
             'jobs': jobs,
         }, f)
 
+def print_markdown_table(flavors):
+    print('| Flavor | Module | Docker Hub |')
+    print('|--------|--------|------------|')
+    for flavor in flavors:
+        print(f'| {flavor} | [octodns_{flavor}](https://github.com/octodns/octodns-{flavor}) | [octodns/{image_name(flavor)}](https://hub.docker.com/r/octodns/{image_name(flavor)}) |')
+
 def main():
     with open('all/requirements.txt', 'r', encoding='UTF-8') as file:
         flavors = [line.rstrip() for line in file.readlines()]
@@ -58,6 +64,7 @@ def main():
     print(flavors)
     write_test_workflow(flavors)
     write_publish_workflow(flavors)
+    print_markdown_table(flavors)
 
 if __name__ == "__main__":
     main()

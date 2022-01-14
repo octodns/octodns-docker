@@ -15,116 +15,25 @@ This runs `octodns-sync` on the contents of the current working directory.
 
 ## Flavors
 
-|:-- Flavor --:|:--Module--:|:--Docker Hub--:|
-| all, aka `octodns` | [all/requirements.txt](all/requirements.txt) | [octodns/octodns](https://hub.docker.com/r/octodns/octodns) |
-
-### 1. 'all'
-
-OctoDNS with all the first-party plugins. [See the list in the requirements.txt for the 'all' flavor.](all/requirements.txt).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/octodns)
-
-### 2. 'azure'
-
-OctoDNS with **only** the [AzureProvider](https://github.com/octodns/octodns-azure).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/azure)
-
-### 3. 'cloudflare'
-
-OctoDNS with **only** the [CloudflareProvider](https://github.com/octodns/octodns-cloudflare).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/cloudflare)
-
-### 4. 'constellix'
-
-OctoDNS with **only** the [ConstellixProvider](https://github.com/octodns/octodns-constellix).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/constellix)
-
-### 5. 'digitalocean'
-
-OctoDNS with **only** the [DigitalOceanProvider](https://github.com/octodns/octodns-digitalocean).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/digitalocean)
-
-### 6. 'dnsimple'
-
-OctoDNS with **only** the [DNSimpleProvider](https://github.com/octodns/octodns-dnsimple).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/dnsimple)
-
-### 7. 'dnsmadeeasy'
-
-OctoDNS with **only** the [DNSMadeEasyProvider](https://github.com/octodns/octodns-dnsmadeeasy).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/dnsmadeeasy)
-
-### 8. 'dyn'
-
-OctoDNS with **only** the [DynProvider](https://github.com/octodns/octodns-dyn).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/dyn)
-
-### 9. 'edgedns'
-
-OctoDNS with **only** the [AkamaiProvider](https://github.com/octodns/octodns-edgedns).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/edgedns)
-
-### 10. 'etchosts'
-
-OctoDNS with **only** the [EtcHostsProvider](https://github.com/octodns/octodns-etchosts).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/etchosts)
-
-### 11. 'gandi'
-
-OctoDNS with **only** the [GandiProvider](https://github.com/octodns/octodns-gandi).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/gandi)
-
-### 12. 'gcore'
-
-OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-gcore).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/gcore)
-
-### 13. 'googlecloud'
-
-OctoDNS with **only** the [GoogleCloudProvider](https://github.com/octodns/octodns-googlecloud).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/googlecloud)
-
-### 14. 'hetzner'
-
-OctoDNS with **only** the [HetznerProvider](https://github.com/octodns/octodns-hetzner).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/hetzner)
-
-### 15. 'mythicbeasts'
-
-OctoDNS with **only** the [MythicBeastsProvider](https://github.com/octodns/octodns-mythicbeasts).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/mythicbeasts)
-
-### 16. 'ns1'
-
-OctoDNS with **only** the [Ns1Provider](https://github.com/octodns/octodns-ns1).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/ns1)
-
-### 17. 'powerdns'
-
-OctoDNS with **only** the [PowerDNSProvider](https://github.com/octodns/octodns-powerdns).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/powerdns)
-
-### 18. 'route53'
-
-OctoDNS with **only** the [Route53Provider](https://github.com/octodns/octodns-route53).
-
-[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/route53)
+| Flavor | Module | Docker Hub |
+|--------|--------|------------|
+| azure | [octodns_azure](https://github.com/octodns/octodns-azure) | [octodns/azure](https://hub.docker.com/r/octodns/azure) |
+| cloudflare | [octodns_cloudflare](https://github.com/octodns/octodns-cloudflare) | [octodns/cloudflare](https://hub.docker.com/r/octodns/cloudflare) |
+| constellix | [octodns_constellix](https://github.com/octodns/octodns-constellix) | [octodns/constellix](https://hub.docker.com/r/octodns/constellix) |
+| digitalocean | [octodns_digitalocean](https://github.com/octodns/octodns-digitalocean) | [octodns/digitalocean](https://hub.docker.com/r/octodns/digitalocean) |
+| dnsimple | [octodns_dnsimple](https://github.com/octodns/octodns-dnsimple) | [octodns/dnsimple](https://hub.docker.com/r/octodns/dnsimple) |
+| dnsmadeeasy | [octodns_dnsmadeeasy](https://github.com/octodns/octodns-dnsmadeeasy) | [octodns/dnsmadeeasy](https://hub.docker.com/r/octodns/dnsmadeeasy) |
+| dyn | [octodns_dyn](https://github.com/octodns/octodns-dyn) | [octodns/dyn](https://hub.docker.com/r/octodns/dyn) |
+| edgedns | [octodns_edgedns](https://github.com/octodns/octodns-edgedns) | [octodns/edgedns](https://hub.docker.com/r/octodns/edgedns) |
+| etchosts | [octodns_etchosts](https://github.com/octodns/octodns-etchosts) | [octodns/etchosts](https://hub.docker.com/r/octodns/etchosts) |
+| gandi | [octodns_gandi](https://github.com/octodns/octodns-gandi) | [octodns/gandi](https://hub.docker.com/r/octodns/gandi) |
+| gcore | [octodns_gcore](https://github.com/octodns/octodns-gcore) | [octodns/gcore](https://hub.docker.com/r/octodns/gcore) |
+| googlecloud | [octodns_googlecloud](https://github.com/octodns/octodns-googlecloud) | [octodns/googlecloud](https://hub.docker.com/r/octodns/googlecloud) |
+| hetzner | [octodns_hetzner](https://github.com/octodns/octodns-hetzner) | [octodns/hetzner](https://hub.docker.com/r/octodns/hetzner) |
+| mythicbeasts | [octodns_mythicbeasts](https://github.com/octodns/octodns-mythicbeasts) | [octodns/mythicbeasts](https://hub.docker.com/r/octodns/mythicbeasts) |
+| ns1 | [octodns_ns1](https://github.com/octodns/octodns-ns1) | [octodns/ns1](https://hub.docker.com/r/octodns/ns1) |
+| powerdns | [octodns_powerdns](https://github.com/octodns/octodns-powerdns) | [octodns/powerdns](https://hub.docker.com/r/octodns/powerdns) |
+| route53 | [octodns_route53](https://github.com/octodns/octodns-route53) | [octodns/route53](https://hub.docker.com/r/octodns/route53) |
 
 ## Adding a new flavor
 
