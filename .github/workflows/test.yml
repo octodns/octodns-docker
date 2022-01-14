@@ -53,6 +53,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild etchosts etchosts
+  Test_gandi:
+    name: gandi
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild gandi gandi
   Test_ns1:
     name: ns1
     runs-on: ubuntu-latest
