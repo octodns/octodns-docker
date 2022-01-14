@@ -69,6 +69,12 @@ OctoDNS with **only** the [AkamaiProvider](https://github.com/octodns/octodns-ed
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/edgedns)
 
+### 8. 'etchosts'
+
+OctoDNS with **only** the [EtcHostsProvider](https://github.com/octodns/octodns-etchosts).
+
+[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/etchosts)
+
 ### 9. 'ns1'
 
 OctoDNS with **only** the [Ns1Provider](https://github.com/octodns/octodns-ns1).
