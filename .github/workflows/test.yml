@@ -59,6 +59,30 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild gandi gandi
+  Test_gcore:
+    name: gcore
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild gcore gcore
+  Test_googlecloud:
+    name: googlecloud
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild googlecloud googlecloud
+  Test_hetzner:
+    name: hetzner
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild hetzner hetzner
+  Test_mythicbeasts:
+    name: mythicbeasts
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild mythicbeasts mythicbeasts
   Test_ns1:
     name: ns1
     runs-on: ubuntu-latest
