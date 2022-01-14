@@ -15,6 +15,9 @@ This runs `octodns-sync` on the contents of the current working directory.
 
 ## Flavors
 
+|:-- Flavor --:|:--Module--:|:--Docker Hub--:|
+| all, aka `octodns` | [all/requirements.txt](all/requirements.txt) | [octodns/octodns](https://hub.docker.com/r/octodns/octodns) |
+
 ### 1. 'all'
 
 OctoDNS with all the first-party plugins. [See the list in the requirements.txt for the 'all' flavor.](all/requirements.txt).
