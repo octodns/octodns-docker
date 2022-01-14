@@ -71,6 +71,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild googlecloud googlecloud
+  Test_hetzner:
+    name: hetzner
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild hetzner hetzner
   Test_ns1:
     name: ns1
     runs-on: ubuntu-latest

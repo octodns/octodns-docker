@@ -93,6 +93,12 @@ OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-goo
 
 [View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/googlecloud)
 
+### 12. 'hetzner'
+
+OctoDNS with **only** the [GCoreProvider](https://github.com/octodns/octodns-hetzner).
+
+[View on Docker Hub &rarr;](https://hub.docker.com/r/octodns/hetzner)
+
 ### 12. 'ns1'
 
 OctoDNS with **only** the [Ns1Provider](https://github.com/octodns/octodns-ns1).
