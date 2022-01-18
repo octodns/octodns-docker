@@ -125,5 +125,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild selectel selectel
+  Test_transip:
+    name: transip
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild transip transip
 name: Test
 'on': push
