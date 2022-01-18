@@ -107,6 +107,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild powerdns powerdns
+  Test_rackspace:
+    name: rackspace
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild rackspace rackspace
   Test_route53:
     name: route53
     runs-on: ubuntu-latest

@@ -35,6 +35,7 @@ This runs `octodns-sync` on the contents of the current working directory.
 | ns1 | [octodns_ns1](https://github.com/octodns/octodns-ns1) | [octodns/ns1](https://hub.docker.com/r/octodns/ns1) |
 | ovh | [octodns_ovh](https://github.com/octodns/octodns-ovh) | [octodns/ovh](https://hub.docker.com/r/octodns/ovh) |
 | powerdns | [octodns_powerdns](https://github.com/octodns/octodns-powerdns) | [octodns/powerdns](https://hub.docker.com/r/octodns/powerdns) |
+| rackspace | [octodns_rackspace](https://github.com/octodns/octodns-rackspace) | [octodns/rackspace](https://hub.docker.com/r/octodns/rackspace) |
 | route53 | [octodns_route53](https://github.com/octodns/octodns-route53) | [octodns/route53](https://hub.docker.com/r/octodns/route53) |
 
 ## Adding a new flavor
