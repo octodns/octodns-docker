@@ -119,5 +119,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild route53 route53
+  Test_selectel:
+    name: selectel
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild selectel selectel
 name: Test
 'on': push

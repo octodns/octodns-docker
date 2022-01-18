@@ -19,3 +19,4 @@ octodns-ovh==0.0.1
 octodns-powerdns==0.0.1
 octodns-rackspace==0.0.1
 octodns-route53==0.0.2
+octodns-selectel==0.0.1
