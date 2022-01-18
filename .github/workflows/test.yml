@@ -107,11 +107,35 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild powerdns powerdns
+  Test_rackspace:
+    name: rackspace
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild rackspace rackspace
   Test_route53:
     name: route53
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild route53 route53
+  Test_selectel:
+    name: selectel
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild selectel selectel
+  Test_transip:
+    name: transip
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild transip transip
+  Test_ultra:
+    name: ultra
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild ultra ultra
 name: Test
 'on': push
