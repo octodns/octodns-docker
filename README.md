@@ -39,6 +39,7 @@ This runs `octodns-sync` on the contents of the current working directory.
 | route53 | [octodns_route53](https://github.com/octodns/octodns-route53) | [octodns/route53](https://hub.docker.com/r/octodns/route53) |
 | selectel | [octodns_selectel](https://github.com/octodns/octodns-selectel) | [octodns/selectel](https://hub.docker.com/r/octodns/selectel) |
 | transip | [octodns_transip](https://github.com/octodns/octodns-transip) | [octodns/transip](https://hub.docker.com/r/octodns/transip) |
+| ultra | [octodns_ultra](https://github.com/octodns/octodns-ultra) | [octodns/ultra](https://hub.docker.com/r/octodns/ultra) |
 
 ## Adding a new flavor
 

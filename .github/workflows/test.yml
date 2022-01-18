@@ -131,5 +131,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild transip transip
+  Test_ultra:
+    name: ultra
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild ultra ultra
 name: Test
 'on': push
