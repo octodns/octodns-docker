@@ -1,5 +1,5 @@
 -e git+https://github.com/octodns/octodns@e60390207a74a7fb9794ddb89943fa513729d8be#egg=octodns
-octodns-azure==0.0.1
+octodns-azure==0.0.2
 octodns-cloudflare==0.0.1
 octodns-constellix==0.0.1
 octodns-digitalocean==0.0.1
