@@ -18,7 +18,7 @@ octodns-ns1==0.0.1
 octodns-ovh==0.0.1
 octodns-powerdns==0.0.1
 octodns-rackspace==0.0.1
-octodns-route53==0.0.3
+octodns-route53==0.0.4
 octodns-selectel==0.0.1
 octodns-transip==0.0.1
 octodns-ultra==0.0.1
