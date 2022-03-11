@@ -1,4 +1,4 @@
--e git+https://github.com/octodns/octodns@e60390207a74a7fb9794ddb89943fa513729d8be#egg=octodns
+-e git+https://github.com/octodns/octodns@2d865b62c3bcab2edce16a30078bac862a0b9224#egg=octodns
 octodns-azure==0.0.3
 octodns-cloudflare==0.0.1
 octodns-constellix==0.0.2
