@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 
-import yaml
+import sys
+
+try:
+    import yaml
+except ModuleNotFoundError:
+    sys.exit("fatal: pyyaml missing. install with 'pip3 install pyyaml'")
 
 def image_name(flavor):
     if flavor == 'all':
@@ -54,13 +59,18 @@ def print_markdown_table(flavors):
     print('| Flavor | Module | Docker Hub |')
     print('|--------|--------|------------|')
     for flavor in flavors:
-        print(f'| {flavor} | [octodns_{flavor}](https://github.com/octodns/octodns-{flavor}) | [octodns/{image_name(flavor)}](https://hub.docker.com/r/octodns/{image_name(flavor)}) |')
+        if flavor == "octodns":
+            print(f'| {flavor} (all) | [octodns](https://github.com/octodns/octodns) | [octodns/{image_name(flavor)}](https://hub.docker.com/r/octodns/{image_name(flavor)}) |')
+        else:
+            print(f'| {flavor} | [octodns_{flavor}](https://github.com/octodns/octodns-{flavor}) | [octodns/{image_name(flavor)}](https://hub.docker.com/r/octodns/{image_name(flavor)}) |')
 
 def main():
     with open('all/requirements.txt', 'r', encoding='UTF-8') as file:
         flavors = [line.rstrip() for line in file.readlines()]
         flavors.pop(0)
         flavors = [flavor.split('==')[0].split('-')[1] for flavor in flavors]
+    flavors.append("octodns")
+    flavors.sort()
     print(flavors)
     write_test_workflow(flavors)
     write_publish_workflow(flavors)

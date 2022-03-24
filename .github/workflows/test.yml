@@ -95,6 +95,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild ns1 ns1
+  Test_octodns:
+    name: octodns
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild octodns octodns
   Test_ovh:
     name: ovh
     runs-on: ubuntu-latest
