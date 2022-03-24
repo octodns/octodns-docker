@@ -33,6 +33,7 @@ This runs `octodns-sync` on the contents of the current working directory.
 | hetzner | [octodns_hetzner](https://github.com/octodns/octodns-hetzner) | [octodns/hetzner](https://hub.docker.com/r/octodns/hetzner) |
 | mythicbeasts | [octodns_mythicbeasts](https://github.com/octodns/octodns-mythicbeasts) | [octodns/mythicbeasts](https://hub.docker.com/r/octodns/mythicbeasts) |
 | ns1 | [octodns_ns1](https://github.com/octodns/octodns-ns1) | [octodns/ns1](https://hub.docker.com/r/octodns/ns1) |
+| octodns (all) | [octodns](https://github.com/octodns/octodns) | [octodns/octodns](https://hub.docker.com/r/octodns/octodns) |
 | ovh | [octodns_ovh](https://github.com/octodns/octodns-ovh) | [octodns/ovh](https://hub.docker.com/r/octodns/ovh) |
 | powerdns | [octodns_powerdns](https://github.com/octodns/octodns-powerdns) | [octodns/powerdns](https://hub.docker.com/r/octodns/powerdns) |
 | rackspace | [octodns_rackspace](https://github.com/octodns/octodns-rackspace) | [octodns/rackspace](https://hub.docker.com/r/octodns/rackspace) |
