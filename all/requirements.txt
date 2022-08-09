@@ -1,4 +1,4 @@
-octodns==0.9.17
+octodns==0.9.18
 octodns-azure==0.0.3
 octodns-cloudflare==0.0.1
 octodns-constellix==0.0.2
