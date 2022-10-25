@@ -1,4 +1,4 @@
-FROM python:3.10-slim as build
+FROM python:3.11.0-slim as build
 RUN set -ex \
   && apt-get -y update \
   && apt-get -y install --no-install-recommends git \
