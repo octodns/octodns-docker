@@ -7,7 +7,7 @@ octodns-dnsimple==0.0.1
 octodns-dnsmadeeasy==0.0.1
 octodns-dyn==0.0.1
 octodns-easydns==0.0.1
-octodns-edgedns==0.0.1
+octodns-edgedns==0.0.2
 octodns-etchosts==0.0.2
 octodns-gandi==0.0.1
 octodns-gcore==0.0.3
