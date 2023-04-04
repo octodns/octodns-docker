@@ -17,6 +17,24 @@ jobs:
         DOCKER_REGISTRY_URL: docker.io
       name: Docker Logout
       run: docker logout "$DOCKER_REGISTRY_URL"
+  Publish_bind:
+    name: bind
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - env:
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REGISTRY_URL: docker.io
+        DOCKER_USERNAME: octodns
+      name: Docker Login
+      run: bash -c 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        "$DOCKER_REGISTRY_URL"'
+    - name: Publish octodns
+      run: script/release bind octodns/bind
+    - env:
+        DOCKER_REGISTRY_URL: docker.io
+      name: Docker Logout
+      run: docker logout "$DOCKER_REGISTRY_URL"
   Publish_cloudflare:
     name: cloudflare
     runs-on: ubuntu-latest

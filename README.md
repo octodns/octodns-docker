@@ -18,6 +18,7 @@ This runs `octodns-sync` on the contents of the current working directory.
 | Flavor | Module | Docker Hub |
 |--------|--------|------------|
 | azure | [octodns_azure](https://github.com/octodns/octodns-azure) | [octodns/azure](https://hub.docker.com/r/octodns/azure) |
+| bind | [octodns_bind](https://github.com/octodns/octodns-bind) | [octodns/bind](https://hub.docker.com/r/octodns/bind) |
 | cloudflare | [octodns_cloudflare](https://github.com/octodns/octodns-cloudflare) | [octodns/cloudflare](https://hub.docker.com/r/octodns/cloudflare) |
 | constellix | [octodns_constellix](https://github.com/octodns/octodns-constellix) | [octodns/constellix](https://hub.docker.com/r/octodns/constellix) |
 | digitalocean | [octodns_digitalocean](https://github.com/octodns/octodns-digitalocean) | [octodns/digitalocean](https://hub.docker.com/r/octodns/digitalocean) |

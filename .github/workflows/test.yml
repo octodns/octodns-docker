@@ -5,6 +5,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: script/cibuild azure azure
+  Test_bind:
+    name: bind
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: script/cibuild bind bind
   Test_cloudflare:
     name: cloudflare
     runs-on: ubuntu-latest
