@@ -26,7 +26,7 @@ def write_test_workflow(flavors):
             'steps': [
                 {'uses': 'actions/checkout@v3'},
                 {'run': 'script/cibuild ${{matrix.flavor}} ${{matrix.flavor}}'}
-            ]    
+            ]
         }
     }
     with open(".github/workflows/test.yml", 'w', encoding='UTF-8') as f:
@@ -37,11 +37,15 @@ def write_test_workflow(flavors):
         }, f)
 
 def write_publish_workflow(flavors):
-    jobs = {}
-    for flavor in flavors:
-        jobs[f'Publish_{flavor}'] = {
-            'name': flavor,
+    jobs = {
+        'Publish': {
+            'name': 'Publish ${{matrix.flavor}}',
             'runs-on': 'ubuntu-latest',
+            'strategy': {
+                'matrix': {
+                    'flavor': flavors
+                }
+            },
             'steps': [
                 {'uses': 'actions/checkout@v3'},
                 {
@@ -49,10 +53,11 @@ def write_publish_workflow(flavors):
                     'run': 'bash -c \'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"\'',
                     'env': {'DOCKER_USERNAME': 'octodns', 'DOCKER_PASSWORD': '${{ secrets.DOCKER_PASSWORD }}', 'DOCKER_REGISTRY_URL': 'docker.io'}
                 },
-                {'name': 'Publish octodns', 'run': f'script/release {flavor} octodns/{image_name(flavor)}'},
+                {'name': 'Publish octodns', 'run': 'script/release ${{matrix.flavor}} octodns/${{matrix.flavor}}'},
                 {'name': 'Docker Logout', 'run': 'docker logout "$DOCKER_REGISTRY_URL"', 'env': {'DOCKER_REGISTRY_URL': 'docker.io'}}
             ]
         }
+    }
     with open(".github/workflows/publish-on-push-to-main.yml", 'w', encoding='UTF-8') as f:
         yaml.dump({
             'on': {'push': { 'branches': ['main', 'github-actions'] }},
