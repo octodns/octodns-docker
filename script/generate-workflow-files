@@ -14,16 +14,21 @@ def image_name(flavor):
         return flavor
 
 def write_test_workflow(flavors):
-    jobs = {}
-    for flavor in flavors:
-        jobs[f'Test_{flavor}'] = {
-            'name': flavor,
+    jobs = {
+        'Test': {
+            'name': 'Test ${{matrix.flavor}}',
             'runs-on': 'ubuntu-latest',
+            'strategy': {
+                'matrix': {
+                    'flavor': flavors
+                }
+            },
             'steps': [
-                {'uses': 'actions/checkout@v2'},
-                {'run': f'script/cibuild {flavor} {image_name(flavor)}'}
-            ]
+                {'uses': 'actions/checkout@v3'},
+                {'run': 'script/cibuild ${{matrix.flavor}} ${{matrix.flavor}}'}
+            ]    
         }
+    }
     with open(".github/workflows/test.yml", 'w', encoding='UTF-8') as f:
         yaml.dump({
             'on': 'push',
@@ -38,7 +43,7 @@ def write_publish_workflow(flavors):
             'name': flavor,
             'runs-on': 'ubuntu-latest',
             'steps': [
-                {'uses': 'actions/checkout@v2'},
+                {'uses': 'actions/checkout@v3'},
                 {
                     'name': 'Docker Login',
                     'run': 'bash -c \'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"\'',
