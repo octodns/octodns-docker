@@ -35,7 +35,8 @@ jobs:
         context: all
         labels: ${{ steps.meta.outputs.labels }}
         platforms: linux/amd64,linux/arm64,linux/arm/v7
-        push: true
+        push: ${{ if github.event_name == 'push' && github.ref == 'refs/heads/main'
+          }}
         tags: ${{ steps.meta.outputs.tags }}
     strategy:
       matrix:
@@ -71,3 +72,4 @@ name: Publish to Docker Hub on push to main
     branches:
     - main
     - github-actions
+    - multiarch
