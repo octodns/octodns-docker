@@ -60,4 +60,7 @@ jobs:
         - transip
         - ultra
 name: Test
-'on': push
+'on':
+  push:
+    branches-ignore:
+    - main

@@ -71,7 +71,7 @@ def write_test_workflow(flavors):
     }
     with open(".github/workflows/test.yml", 'w', encoding='UTF-8') as f:
         yaml.dump({
-            'on': 'push',
+            'on': {'push': {'branches-ignore': ['main']}},
             'name': 'Test',
             'jobs': jobs,
         }, f)
