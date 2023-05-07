@@ -4,7 +4,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - run: script/cibuild ${{matrix.flavor}} ${{matrix.flavor}}
+    - uses: docker/setup-qemu-action@v2
+      with:
+        platforms: arm64,arm
+    - uses: docker/setup-buildx-action@v2
+      with:
+        platforms: linux/amd64,linux/arm64
+    - id: meta
+      name: create metadata (tags and labels)
+      uses: docker/metadata-action@v4
+      with:
+        flavor: latest=false
+        images: octodns/${{matrix.flavor}}
+        labels: org.opencontainers.image.documentation=https://github.com/octodns/octodns#readme
+          org.opencontainers.image.licenses=MIT
+        tags: type=raw,value={{date 'YYYY.MM'}}
+    - name: build image on all platforms
+      uses: docker/build-push-action@v4
+      with:
+        build-args: OCTODNS_FLAVOR=${{ matrix.flavor }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+        context: all
+        labels: ${{ steps.meta.outputs.labels }}
+        platforms: linux/amd64,linux/arm64
+        tags: ${{ steps.meta.outputs.tags }}
+    - name: script/build
+      run: script/build ${{ matrix.flavor }} ${{ steps.meta.outputs.tags }}
+    - name: script/test
+      run: script/test ${{ steps.meta.outputs.tags }}
     strategy:
       matrix:
         flavor:
@@ -34,4 +62,7 @@ jobs:
         - transip
         - ultra
 name: Test
-'on': push
+'on':
+  pull_request:
+    branches:
+    - main

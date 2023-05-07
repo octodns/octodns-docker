@@ -20,20 +20,6 @@ test -z "$TAG" && {
 
 set -ex
 
-if ! [ -d "${script_dir}/../${FLAVOR}" ]; then
-    mkdir "${script_dir}/../${FLAVOR}"
-fi
-
-if ! [ -f "${script_dir}/../${FLAVOR}/Dockerfile" ]; then
-    cp "${script_dir}/../all/Dockerfile" "${script_dir}/../${FLAVOR}/Dockerfile"
-fi
-
-if ! [ -f "${script_dir}/../${FLAVOR}/requirements.txt" ]; then
-    head -n1 "${script_dir}/../all/requirements.txt" > "${script_dir}/../${FLAVOR}/requirements.txt"
-    grep "$FLAVOR" "${script_dir}/../all/requirements.txt" >> "${script_dir}/../${FLAVOR}/requirements.txt"
-    cat "${script_dir}/../${FLAVOR}/requirements.txt"
-fi
-
 docker build --tag "$TAG" \
     --label org.opencontainers.image.created="$(date --rfc-3339=seconds)" \
     --label org.opencontainers.image.url="https://github.com/${GITHUB_REPOSITORY}" \
@@ -41,4 +27,5 @@ docker build --tag "$TAG" \
     --label org.opencontainers.image.source="https://github.com/${GITHUB_REPOSITORY}" \
     --label org.opencontainers.image.revision="$GITHUB_SHA" \
     --label org.opencontainers.image.licenses=MIT \
-    "$FLAVOR"
+    --build-arg OCTODNS_FLAVOR="$FLAVOR" \
+    all
