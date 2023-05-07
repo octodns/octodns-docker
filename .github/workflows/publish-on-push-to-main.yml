@@ -24,7 +24,7 @@ jobs:
       with:
         password: ${{ secrets.DOCKER_PASSWORD }}
         registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
+        username: octodns
     - name: build & push image for all supported platforms
       uses: docker/build-push-action@v4
       with:
