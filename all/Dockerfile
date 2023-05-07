@@ -14,13 +14,15 @@ ARG OCTODNS_FLAVOR=octodns
 
 RUN set -ex; \
   if [ "${OCTODNS_FLAVOR}" != "octodns" ] ; then \
-    head -n1 all-requirements.txt >> requirements.txt && \
-    grep "${OCTODNS_FLAVOR}" all-requirements.txt >> requirements.txt; \
+    head -n1 all-requirements.txt >> requirements.txt \
+    && grep "${OCTODNS_FLAVOR}" all-requirements.txt >> requirements.txt; \
   else \
     cp all-requirements.txt requirements.txt; \
   fi
 
 RUN set -ex \
+  && apt-get update \
+  && apt-get install gcc --no-install-recommends -y \
   && python -m venv env \
   && . env/bin/activate \
   && pip install --no-cache-dir -r requirements.txt
