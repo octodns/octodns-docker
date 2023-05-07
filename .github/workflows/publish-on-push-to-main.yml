@@ -64,7 +64,7 @@ jobs:
         - selectel
         - transip
         - ultra
-name: Publish to Docker Hub on push to main
+name: Publish to Docker Hub
 'on':
   push:
     branches:

@@ -138,7 +138,7 @@ def write_publish_workflow(flavors):
     with open(".github/workflows/publish-on-push-to-main.yml", 'w', encoding='UTF-8') as f:
         yaml.dump({
             'on': {'push': { 'branches': ['main', 'github-actions', 'multiarch'] }},
-            'name': 'Publish to Docker Hub on push to main',
+            'name': 'Publish to Docker Hub',
             'jobs': jobs,
         }, f)
 
