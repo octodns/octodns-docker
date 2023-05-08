@@ -22,7 +22,7 @@ RUN set -ex; \
 
 RUN set -ex \
   && apt-get update \
-  && apt-get install build-essentials --no-install-recommends -y \
+  && apt-get install build-essential --no-install-recommends -y \
   && python -m venv env \
   && . env/bin/activate \
   && pip install --no-cache-dir -r requirements.txt
