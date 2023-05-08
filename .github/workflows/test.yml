@@ -27,7 +27,7 @@ jobs:
         cache-to: type=gha,mode=max
         context: all
         labels: ${{ steps.meta.outputs.labels }}
-        load: true
+        platforms: linux/amd64,linux/arm64,linux/arm/v7
         tags: ${{ steps.meta.outputs.tags }}
     - name: script/test
       run: script/test ${{ steps.meta.outputs.tags }}

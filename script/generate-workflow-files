@@ -54,7 +54,8 @@ def write_test_workflow(flavors):
                     'uses': 'docker/build-push-action@v4',
                     'with': {
                         'context': 'all',
-                        'load': True,
+                        # 'load': True,
+                        'platforms': PLATFORMS,
                         'tags': '${{ steps.meta.outputs.tags }}',
                         'labels': '${{ steps.meta.outputs.labels }}',
                         'build-args': 'OCTODNS_FLAVOR=${{ matrix.flavor }}',
