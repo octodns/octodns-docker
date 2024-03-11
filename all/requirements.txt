@@ -4,7 +4,7 @@ octodns-bind==0.0.6
 octodns-cloudflare==0.0.4
 octodns-constellix==0.0.4
 octodns-digitalocean==0.0.2
-octodns-dnsimple==0.0.2
+octodns-dnsimple==0.0.3
 octodns-dnsmadeeasy==0.0.5
 octodns-dyn==0.0.1
 octodns-easydns==0.0.1
