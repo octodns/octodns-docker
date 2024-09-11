@@ -28,7 +28,7 @@ def write_test_workflow(flavors):
             'steps': [
                 {'uses': 'actions/checkout@v4'},
                 {
-                    'uses': 'docker/setup-qemu-action@v2',
+                    'uses': 'docker/setup-qemu-action@v3',
                     'with': {'platforms': 'arm64,arm'}
                 },
                 {
@@ -92,7 +92,7 @@ def write_publish_workflow(flavors):
             'steps': [
                 {'uses': 'actions/checkout@v4'},
                 {
-                    'uses': 'docker/setup-qemu-action@v2',
+                    'uses': 'docker/setup-qemu-action@v3',
                     'with': {'platforms': 'arm64,arm'}
                 },
                 {
