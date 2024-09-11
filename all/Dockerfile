@@ -1,12 +1,24 @@
-FROM python:3.12.6-slim as build
-RUN set -ex \
-  && apt-get -y update \
-  && apt-get -y install --no-install-recommends git \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+FROM python:3.12.6-slim AS build
+
 WORKDIR /opt/octodns
-COPY requirements.txt requirements.txt
+
+COPY requirements.txt all-requirements.txt
+
+ARG OCTODNS_FLAVOR=octodns
+
+RUN set -ex; \
+  if [ "${OCTODNS_FLAVOR}" != "octodns" ] ; then \
+    head -n1 all-requirements.txt >> requirements.txt \
+    && grep "${OCTODNS_FLAVOR}" all-requirements.txt >> requirements.txt; \
+  else \
+    cp all-requirements.txt requirements.txt; \
+  fi
+
 RUN set -ex \
+  && apt-get update \
+  && apt-get install git build-essential libffi-dev rustc cargo --no-install-recommends -y \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && python -m venv env \
   && . env/bin/activate \
   && pip install --no-cache-dir -r requirements.txt
