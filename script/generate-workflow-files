@@ -50,7 +50,7 @@ def write_test_workflow(flavors):
                 },
                 {
                     'name': 'build image on all platforms',
-                    'uses': 'docker/build-push-action@v4',
+                    'uses': 'docker/build-push-action@v6',
                     'with': {
                         'context': 'all',
                         'platforms': PLATFORMS,
@@ -127,7 +127,7 @@ def write_publish_workflow(flavors):
                 },
                 {
                     'name': 'build & push image for all supported platforms',
-                    'uses': 'docker/build-push-action@v4',
+                    'uses': 'docker/build-push-action@v6',
                     'with': {
                         'context': 'all',
                         'push': '${{ github.event_name == \'push\' && github.ref == \'refs/heads/main\' }}',
