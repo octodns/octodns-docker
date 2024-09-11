@@ -37,7 +37,7 @@ def write_test_workflow(flavors):
                 },
                 {
                     'name': 'create metadata (tags and labels)',
-                    'uses': 'docker/metadata-action@v4',
+                    'uses': 'docker/metadata-action@v5',
                     'id': 'meta',
                     'with': {
                         'images': 'octodns/${{matrix.flavor}}',
@@ -101,7 +101,7 @@ def write_publish_workflow(flavors):
                 },
                 {
                     'name': 'create metadata (tags and labels)',
-                    'uses': 'docker/metadata-action@v4',
+                    'uses': 'docker/metadata-action@v5',
                     'id': 'meta',
                     'with': {
                         'images': 'octodns/${{matrix.flavor}}',
