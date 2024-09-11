@@ -32,7 +32,7 @@ def write_test_workflow(flavors):
                     'with': {'platforms': 'arm64,arm'}
                 },
                 {
-                    'uses': 'docker/setup-buildx-action@v2',
+                    'uses': 'docker/setup-buildx-action@v3',
                     'with': {'platforms': PLATFORMS}
                 },
                 {
@@ -96,7 +96,7 @@ def write_publish_workflow(flavors):
                     'with': {'platforms': 'arm64,arm'}
                 },
                 {
-                    'uses': 'docker/setup-buildx-action@v2',
+                    'uses': 'docker/setup-buildx-action@v3',
                     'with': {'platforms': PLATFORMS}
                 },
                 {
