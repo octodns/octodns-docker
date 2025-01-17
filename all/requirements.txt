@@ -1,6 +1,6 @@
 octodns==1.10.0
 octodns-azure==0.0.9
-octodns-bind==0.0.6
+octodns-bind==0.0.7
 octodns-cloudflare==0.0.7
 octodns-constellix==0.0.5
 octodns-digitalocean==0.0.2
