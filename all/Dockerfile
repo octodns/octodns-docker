@@ -1,4 +1,4 @@
-FROM python:3.13.1-slim AS build
+FROM python:3.13.2-slim AS build
 
 WORKDIR /opt/octodns
 
