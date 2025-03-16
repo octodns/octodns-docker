@@ -108,9 +108,9 @@ def write_publish_workflow(flavors):
                         'flavor': 'latest=false',
                         'tags': ''
                             # set dated tag
-                            'type=raw,value={{date \'YYYY.MM\'}}'
+                            'type=raw,value={{date \'YYYY.MM\'}},enable={{is_default_branch}}'
                             # set latest tag for default branch
-                            ' type=raw,value=latest,enable={{is_default_branch}}',
+                            '\ntype=raw,value=latest,enable={{is_default_branch}}',
                         'labels': ''
                             'org.opencontainers.image.documentation=https://github.com/octodns/octodns#readme'
                             ' org.opencontainers.image.licenses=MIT'

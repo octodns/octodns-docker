@@ -18,7 +18,9 @@ jobs:
         images: octodns/${{matrix.flavor}}
         labels: org.opencontainers.image.documentation=https://github.com/octodns/octodns#readme
           org.opencontainers.image.licenses=MIT
-        tags: type=raw,value={{date 'YYYY.MM'}} type=raw,value=latest,enable={{is_default_branch}}
+        tags: 'type=raw,value={{date ''YYYY.MM''}},enable={{is_default_branch}}
+
+          type=raw,value=latest,enable={{is_default_branch}}'
     - name: login to docker.io registry
       uses: docker/login-action@v3
       with:
