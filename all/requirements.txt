@@ -1,5 +1,5 @@
 octodns==1.11.0
-octodns-azure==0.0.9
+octodns-azure==1.0.0
 octodns-bind==1.0.0
 octodns-cloudflare==0.0.9
 octodns-constellix==0.0.5
@@ -8,7 +8,7 @@ octodns-dnsimple==0.0.3
 octodns-dnsmadeeasy==0.0.5
 octodns-dyn==0.0.1
 octodns-easydns==0.0.1
-octodns-edgedns==0.0.4
+octodns-edgedns==1.0.0
 octodns-edgecenter==0.0.3
 octodns-etchosts==0.0.2
 octodns-gandi==0.0.3
@@ -22,5 +22,5 @@ octodns-powerdns==0.0.7
 octodns-rackspace==0.0.1
 octodns-route53==0.0.7
 octodns-selectel==0.99.4
-octodns-transip==0.0.4
+octodns-transip==1.0.0
 octodns-ultra==0.0.3
