@@ -12,7 +12,7 @@ octodns-edgedns==1.0.0
 octodns-edgecenter==1.0.0
 octodns-etchosts==0.0.2
 octodns-gandi==1.0.0
-octodns-gcore==0.0.4
+octodns-gcore==1.0.0
 octodns-googlecloud==1.0.0
 octodns-hetzner==0.0.2
 octodns-mythicbeasts==1.0.0
