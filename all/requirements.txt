@@ -19,7 +19,7 @@ octodns-mythicbeasts==0.0.1
 octodns-ns1==0.0.7
 octodns-ovh==0.0.2
 octodns-powerdns==0.0.7
-octodns-rackspace==0.0.1
+octodns-rackspace==1.0.0
 octodns-route53==0.0.7
 octodns-selectel==0.99.4
 octodns-transip==1.0.0
