@@ -14,7 +14,7 @@ octodns-etchosts==0.0.2
 octodns-gandi==1.0.0
 octodns-gcore==1.0.0
 octodns-googlecloud==1.0.0
-octodns-hetzner==0.0.2
+octodns-hetzner==1.0.0
 octodns-mythicbeasts==1.0.0
 octodns-ns1==0.0.7
 octodns-ovh==1.0.0
