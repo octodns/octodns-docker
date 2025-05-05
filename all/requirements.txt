@@ -16,7 +16,7 @@ octodns-gcore==1.0.0
 octodns-googlecloud==1.0.0
 octodns-hetzner==1.0.0
 octodns-mythicbeasts==1.0.0
-octodns-ns1==0.0.7
+octodns-ns1==1.0.0
 octodns-ovh==1.0.0
 octodns-powerdns==1.0.0
 octodns-rackspace==1.0.0
