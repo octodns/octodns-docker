@@ -18,7 +18,7 @@ octodns-hetzner==0.0.2
 octodns-mythicbeasts==0.0.1
 octodns-ns1==0.0.7
 octodns-ovh==1.0.0
-octodns-powerdns==0.0.7
+octodns-powerdns==1.0.0
 octodns-rackspace==1.0.0
 octodns-route53==0.0.7
 octodns-selectel==1.0.0
