@@ -23,4 +23,4 @@ octodns-rackspace==0.0.1
 octodns-route53==0.0.7
 octodns-selectel==0.99.4
 octodns-transip==1.0.0
-octodns-ultra==0.0.3
+octodns-ultra==1.0.0
