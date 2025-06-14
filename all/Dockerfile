@@ -15,10 +15,6 @@ RUN set -ex; \
   fi
 
 RUN set -ex \
-  && apt-get update \
-  && apt-get install git build-essential libffi-dev rustc cargo --no-install-recommends -y \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   && python -m venv env \
   && . env/bin/activate \
   && pip install --no-cache-dir -r requirements.txt
