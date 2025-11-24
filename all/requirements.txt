@@ -24,5 +24,5 @@ octodns-rackspace==1.0.0
 octodns-route53==1.0.1
 octodns-selectel==1.0.0
 octodns-spf==1.0.0
-octodns-transip==1.0.0
+octodns-transip==1.0.1
 octodns-ultra==1.0.0
