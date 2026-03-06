@@ -12,7 +12,7 @@ jobs:
         platforms: linux/amd64,linux/arm64
     - id: meta
       name: create metadata (tags and labels)
-      uses: docker/metadata-action@v5
+      uses: docker/metadata-action@v6
       with:
         flavor: latest=false
         images: octodns/${{matrix.flavor}}
