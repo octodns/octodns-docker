@@ -1,4 +1,4 @@
-octodns==1.16.0
+octodns==1.17.0
 octodns-azure==1.1.0
 octodns-bind==1.1.0
 octodns-cloudflare==1.1.0
