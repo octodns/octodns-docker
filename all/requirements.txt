@@ -1,5 +1,5 @@
 octodns==1.17.0
-octodns-azure==1.1.0
+octodns-azure==1.1.1
 octodns-bind==1.1.0
 octodns-cloudflare==1.1.0
 octodns-constellix==1.0.1
